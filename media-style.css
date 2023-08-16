@@ -1,0 +1,27 @@
+@charset "UTP-8";
+
+/*------RETRATO MOBILE-------*/
+@media only screen and (max-width: 390px){
+    body{
+        margin: 10px;
+        background-color: red;
+        max-width: 390px;
+    }
+}
+
+/*------PAISAGEM MOBILE-------*/
+@media only screen and (min-width: 844px){
+    body{
+        margin: 10px;
+        background-color: blue;
+        height: 30px;
+    }
+}
+
+/*-----PAISAGEM TELAS------*/
+@media screen and (min-width: 1866px){
+    body{
+        margin: 10px;
+        background-color: green;
+    }
+}
