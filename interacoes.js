@@ -2,24 +2,33 @@ const super_mario = document.querySelector('.super_mario');
 const tubo = document.querySelector('.tubo');
 
 
-const pulo_do_mario = () => {
-    super_mario.classList.add('pulo_do_mario');
+const pular = () => {
+    super_mario.classList.add('pular');
 
     setTimeout(() => {
-        super_mario.classList.remove('pulo_do_mario');
-    }, 1);
+        super_mario.classList.remove('pular');
+    }, 500);
 }
 
 const loop = setInterval(() => {
 
-    const posicaoTubo = tubo.offSetLeft;
-    const posicaoMario = +window.getComputedStyle('super_mario').bottom.replace('px', '');
+    const posicaoTubo = tubo.offsetLeft;
+    const posicaoMario = +window.getComputedStyle(super_mario).bottom.replace('px', '');
 
-    if (posicaoTubo == 85){
+    if (posicaoTubo <= 60 && posicaoTubo > 0 && posicaoMario < 90){
         tubo.style.animation = 'none';
         tubo.style.left = `${posicaoTubo}px`;
+
+        super_mario.style.animation = 'none';
+        super_mario.style.bottom = `${posicaoMario}px`;
+
+        super_mario.src='./Img-mario/game-over.png';
+        super_mario.style.width = '100%'
+        super_mario.style.top = '50px'
+
+        clearInterval(loop);
     }
 
 }, 10);
 
-document.addEventListener('keydown', pulo_do_mario);
+document.addEventListener('keydown', pular);
