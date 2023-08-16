@@ -23,7 +23,8 @@ const loop = setInterval(() => {
         super_mario.style.bottom = `${posicaoMario}px`;
 
         super_mario.src='./Img-mario/game-over.png';
-        super_mario.style.width = '100%'
+        super_mario.style.width = '80%'
+        super_mario.style.left = '10%'
         super_mario.style.top = '50px'
 
         clearInterval(loop);
@@ -32,3 +33,5 @@ const loop = setInterval(() => {
 }, 10);
 
 document.addEventListener('keydown', pular);
+document.addEventListener('click', pular);
+document.addEventListener('touch', pular);
